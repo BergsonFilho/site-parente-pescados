@@ -1,0 +1,434 @@
+/* styles.css - estilos da Maré Fresca */
+:root{
+  --accent:#0e7490;
+  --accent-2:#0369a1;
+  --bg:#f7fafc;
+  --text:#0f172a;
+  --muted:#64748b;
+}
+*{box-sizing:border-box}
+body{
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  margin:0;
+}
+.container
+{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px
+}
+.site-header
+{
+  background:#fff;
+  box-shadow:0 2px 6px rgba(2,6,23,0.06);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.header-inner
+{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0
+}
+.logo
+{
+  font-weight:700;
+  font-size:1.2rem;
+  color:var(--accent)
+}
+.main-nav a
+{
+margin:0 10px;
+color:var(--muted);
+text-decoration:none;
+font-weight:600
+}
+.cart-btn
+{
+  background:transparent;
+  border:1px solid transparent;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer
+}
+.cart-btn span
+{
+  background:var(--accent);
+  color:white;
+  padding:2px 7px;
+  border-radius:999px;
+  margin-left:8px;
+  font-size:0.9rem
+}
+.hero
+{
+  padding:40px 0;
+  display:flex;
+  align-items:center;
+  position: relative;
+}
+.hero-inner
+{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:32px;
+  align-items:center;
+  z-index: 1;
+  position: relative;
+}
+.hero-text h1
+{
+  font-size:2rem;
+  margin-bottom:8px
+}
+.hero-text p
+{
+  color:var(--muted);
+  margin-bottom:16px
+}
+.btn
+{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  border:1px solid transparent;
+  font-weight:600
+}
+.btn.primary
+{
+  background:var(--accent);
+  color:white
+}
+.hero-image img
+{
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.products h2,.about h2,.contact h2
+{
+  margin:24px 0 12px
+}
+.grid
+{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px
+}
+.card
+{
+  background:white;
+  border-radius:12px;
+  padding:14px;
+  box-shadow:0 4px 12px rgba(2,6,23,0.04);
+  display:flex;
+  flex-direction:column
+}
+.card img
+{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:10px
+}
+.card .title
+{
+  font-weight:600;
+  margin-bottom:6px
+}
+.card .price
+{
+  margin-top:auto;
+  font-weight:700
+}
+.card .actions
+{
+  display:flex;
+  gap:8px;
+  margin-top:10px
+}
+.card button
+{
+  flex:1;
+  padding:8px;
+  border-radius:8px;
+  border:1px solid var(--accent);
+  background:transparent;
+  cursor:pointer
+}
+.card button.buy
+{
+  background:var(--accent);
+  color:white;
+  border:none
+}
+.about,.contact
+{
+  margin:40px 0;
+  padding:18px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(2,6,23,0.03)
+}
+
+/* Seção de contato moderna (WhatsApp) */
+.contact-desc {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.whatsapp-contact-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #ffffff;
+  padding: 14px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-contact-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.28);
+}
+
+/* Carrinho */
+.cart-modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 380px;
+  background: #ffffff !important;
+  box-shadow: -20px 0 40px rgba(2,6,23,0.08);
+  transform: translateX(110%);
+  transition: transform .25s ease;
+  padding: 24px;
+  z-index: 9999 !important;
+}
+
+.cart-modal[aria-hidden="false"] {
+  transform: translateX(0);
+}
+
+/* CARRINHO – layout bonito */
+.cart-modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 380px;
+  background: #ffffff;
+  box-shadow: -20px 0 40px rgba(2,6,23,0.10);
+  transform: translateX(110%);
+  transition: transform .25s ease;
+  padding: 24px;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.cart-modal[aria-hidden="false"] {
+  transform: translateX(0);
+}
+
+/* Conteúdo do carrinho */
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close-cart {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  align-self: flex-end;
+  padding: 4px;
+}
+
+.cart-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+/* Lista de itens */
+.cart-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.cart-item img {
+  width: 70px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-item .info {
+  flex: 1;
+}
+
+.cart-item .title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cart-item .price {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Botões + - remover */
+.cart-item .qty {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.cart-item button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.cart-item button.remove {
+  background: #dc2626;
+}
+
+/* Rodapé do carrinho */
+.cart-footer {
+  margin-top: 16px;
+}
+
+.cart-footer .total {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+#checkoutBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Checkout */
+.checkout-modal
+{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) scale(.9);
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  width:420px;
+  box-shadow:0 20px 60px rgba(2,6,23,0.12);
+  z-index:70;
+  opacity:0;
+  pointer-events:none;
+  transition:all .18s ease
+}
+.checkout-modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.checkout-form
+{
+  display:flex;
+  flex-direction:column;
+  gap:8px
+}
+.checkout-form input
+{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #e2e8f0
+}
+.row
+{
+  display:flex;
+  gap:8px
+}
+.payment-message
+{
+  margin-top:10px;
+  color:green;
+  font-weight:600
+}
+
+/* Responsivo */
+@media(max-width:900px) {
+
+  .cart-modal {
+    width: 100%;
+    left: 0;
+    transform: translateY(110%);
+  }
+
+  .cart-modal[aria-hidden="false"] {
+    transform: translateY(0);
+  }
+}
+
+.cart-modal img {
+  width: 64px !important;
+  height: 48px !important;
+  object-fit: cover;
+}
+
+.cart-footer .btn.primary,
+#checkoutBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+
+

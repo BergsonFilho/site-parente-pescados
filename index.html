@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parente Pescados — Loja de Pescados</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Parente Pescados</div>
+      <nav class="main-nav">
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button id="cartBtn" class="cart-btn" aria-label="Abrir carrinho">
+        🧺 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Peixe fresco e Entrega rápida!</h1>
+          <p>Os melhores pescados direto do mar para sua mesa — embalados, refrigerados e frescos!</p>
+          <a href="#produtos" class="btn">Ver produtos</a>
+        </div>
+        <div class="hero-image">
+          <img src="assets/imagem-parente-pescados.png" alt="Peixes frescos" />
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" class="products container">
+      <h2>Produtos</h2>
+      <div id="productsGrid" class="grid"></div>
+    </section>
+
+    <section id="sobre" class="about container">
+      <h2>Sobre a Parente Pescados</h2>
+      <p>Empresa familiar com logística resistente à cadeia fria e compromisso com pesca responsável.</p>
+    </section>
+
+    <section id="contato" class="contact container">
+  <h2>Fale Conosco</h2>
+  <p class="contact-desc">
+    Atendimento rápido e direto pelo WhatsApp. Clique no botão abaixo para falar com nossa equipe:
+  </p>
+  <a href="https://wa.me/5585988164970" target="_blank" class="whatsapp-contact-btn">
+    💬 Falar no WhatsApp
+  </a>
+</section>
+  </main>
+
+  <!-- Carrinho Modal -->
+  <aside id="cartModal" class="cart-modal" aria-hidden="true">
+    <div class="cart-content">
+      <button id="closeCart" class="close-cart" aria-label="Fechar">✕</button>
+      <h3>Seu carrinho</h3>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total">Total: R$ <span id="cartTotal">0.00</span></div>
+        <button id="checkoutBtn" class="btn primary">Finalizar compra</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <aside id="checkoutModal" class="checkout-modal" aria-hidden="true">
+    <div class="checkout-content">
+      <button id="closeCheckout" class="close-cart" aria-label="Fechar">✕</button>
+      <h3>Pagamento</h3>
+      <form id="checkoutForm" class="checkout-form">
+        <input type="text" id="cardName" placeholder="Nome no cartão" required>
+        <input type="text" id="cardNumber" placeholder="Número do cartão" inputmode="numeric" maxlength="19" required>
+        <div class="row">
+          <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5" required>
+          <input type="text" id="cardCVC" placeholder="CVC" maxlength="4" inputmode="numeric" required>
+        </div>
+        <button type="submit" class="btn primary">Pagar R$ <span id="checkoutAmount">0.00</span></button>
+      </form>
+      <div id="paymentMessage" class="payment-message" role="status"></div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
